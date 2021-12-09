@@ -194,9 +194,9 @@ public class ArcProgress extends View {
         this.progress = Float.parseFloat(new DecimalFormat("#.##", dfs).format(progress));
 
         if (this.progress > getMax()) {
-            this.progress %= getMax();
+            this.progress = getMax();
         }
-        currentProgress = 0;
+        currentProgress = progress;
         invalidate();
     }
 
