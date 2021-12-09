@@ -36,7 +36,7 @@ public class ArcProgress extends View {
     private String text;
     private float textSize;
     private int textColor;
-    private int currentProgress = 0;
+    private float currentProgress = 0;
     private float progress = 0;
     private int max;
     private int finishedStrokeColor;
