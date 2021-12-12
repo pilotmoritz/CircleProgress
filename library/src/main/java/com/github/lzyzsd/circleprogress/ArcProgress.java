@@ -191,7 +191,7 @@ public class ArcProgress extends View {
 
     public void setProgress(float progress) {
         DecimalFormatSymbols dfs = new DecimalFormatSymbols(Locale.US);
-        this.progress = Float.parseFloat(new DecimalFormat("#.##", dfs).format(progress));
+        this.progress = Float.parseFloat(new DecimalFormat("#.#", dfs).format(progress));
 
         if (this.progress > getMax()) {
             this.progress = getMax();

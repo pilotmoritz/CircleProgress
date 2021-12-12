@@ -13,6 +13,10 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 /**
  * Created by bruce on 11/4/14.
  */
@@ -105,7 +109,9 @@ public class CircleProgress extends View {
     public float getProgress() { return progress; }
 
     public void setProgress(float progress) {
-        this.progress = progress;
+        DecimalFormatSymbols dfs = new DecimalFormatSymbols(Locale.US);
+        this.progress = Float.parseFloat(new DecimalFormat("#.#", dfs).format(progress));
+
         if (this.progress > getMax()) {
             this.progress = getMax();
         }
